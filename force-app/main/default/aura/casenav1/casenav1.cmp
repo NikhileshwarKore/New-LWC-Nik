@@ -1,0 +1,16 @@
+<aura:component controller="casenav" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    {!v.recordId}
+    <aura:attribute name="caseList" type="Case[]" />  
+    <aura:handler name="init" value="{!this}" action="{!c.nav}" />
+    <aura:iteration items="{!v.caseList}" var="case">
+        <lightning:card title="{!case.Status}" footer="{!case.Origin}"
+                        iconName="standard:case" >
+            <aura:set attribute="actions">
+                <lightning:button name="{!case.Id}" label="View Details" variant="brand"
+                                  onclick="{!c.doRedirect}"/>
+            </aura:set>
+            {!case.Status} {!case.Origin} <br/>
+            {!case.CaseNumber} and {!case.CurrencyIsoCode}
+        </lightning:card>
+    </aura:iteration>
+</aura:component>

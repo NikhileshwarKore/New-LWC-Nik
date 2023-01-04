@@ -1,0 +1,25 @@
+<aura:component  controller="contact_accordion" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	         <aura:handler name="init"
+                  value="{!this}"
+                  action="{!c.doInit}"/>
+         <aura:attribute name="cntList"
+                    type="List"/>
+    <div class="slds-m-around_xx-large">
+           <lightning:accordion>
+          <aura:iteration items="{!v.cntList}"
+                          var="cnt">
+              <lightning:accordionSection name="{!cnt.Name}"
+                                          label="{!cnt.Name}">
+               <aura:iteration items="{!cnt.Cases}"
+                          var="case">
+                   <aura:set attribute="body">
+                       <p>CaseNumber : {!case.CaseNumber}</p>
+                  <p>Origin : {!case.Origin}</p>
+                        <p>Priority : {!case.Priority}</p><hr/>
+                    </aura:set>
+                   </aura:iteration>
+                  </lightning:accordionSection>
+      </aura:iteration>
+      </lightning:accordion>
+ </div>
+</aura:component>

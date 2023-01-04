@@ -1,0 +1,5 @@
+<aura:component>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <lightning:button name="popover" label="Show Popover" onclick="{!c.handleShowPopover}"/>
+    <div class="popover1" onmouseover="{!c.handleShowPopover}">Popover should display if you hover over here.</div>
+</aura:component>

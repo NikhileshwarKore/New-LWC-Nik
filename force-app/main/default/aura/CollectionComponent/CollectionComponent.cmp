@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="stdname" type="String" default="KORE" access="public"/>
+    <aura:attribute name="colors" type="List" default="['red','blue','green']"/>
+    <aura:attribute name="colorarr" type="String[]" default="['red','blue','orange']"/>
+    <aura:attribute name="mapcolor" type="Map" default="{R:'red', B:'blue', G:'green'}"/>
+    <aura:attribute name="colorset" type="Set" default="['red', 'green', 'blue','red','pink','green','grey','black']" />
+    <br/>
+    Hai everyone my name is {!v.stdname} welcome to colourworld here we have {!v.colors[2]} and {!v.colorset[4]} and {!v.mapcolor.R} and {!v.colorarr[2]}
+    <br/>
+    <aura:iteration items="{!v.colors}" var="item">
+        {!item} <br/>
+    </aura:iteration>
+	
+</aura:component>

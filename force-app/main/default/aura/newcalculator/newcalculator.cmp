@@ -1,0 +1,24 @@
+<aura:component >
+	
+    <div>
+        <ui:inputnumber label="First Number : " aura:id= "fnum"/>
+    </div>
+    <div>
+        <ui:inputnumber label="Second Number : " aura:id= "Snum"/>
+         </div>
+    <div>
+    <ui:inputnumber label="Result : " aura:id= "Result"/>
+    </div>
+    <div>
+        <ui:button label="Add"  press="{!c.add}" class="button"/>
+     </div>
+ <div>
+        <ui:button label="multiply"  press="{!c.mul}" class="button"/>
+     </div>
+ <div>
+        <ui:button label="Subtract"  press="{!c.Sub}" class="button"/>
+     </div>
+ <div>
+        <ui:button label="division"  press="{!c.div}" class="button"/>
+     </div>
+</aura:component>

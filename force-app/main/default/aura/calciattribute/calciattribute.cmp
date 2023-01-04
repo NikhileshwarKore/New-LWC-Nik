@@ -1,0 +1,37 @@
+<aura:component >
+	 <aura:attribute name="num1" type="Integer"/>
+    <aura:attribute name="num2" type="Integer"/>
+    <aura:attribute name="num3" type="Integer"/><br/>
+    <ui:inputNumber label="Number 1 " value="{!v.num1}"/><br/>
+    <ui:inputNumber label="Number 2 " value="{!v.num2}"/><br/>
+    <aura:attribute name="isAdd" type="Boolean" default="false"/>
+    <aura:attribute name="isSub" type="Boolean" default="false"/>
+    <aura:attribute name="isMul" type="Boolean" default="false"/>
+    <aura:attribute name="isDiv" type="Boolean" default="false"/>
+    <aura:attribute name="isRefresh" type="Boolean" default="false"/>
+    <aura:if isTrue="{!v.isAdd}">
+        Addition of Two Numbers is :  {!num3}
+        <ui:outputNumber value="{!v.num3}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.isSub}">
+        Substraction of Two Numbers is :  {!num3}
+        <ui:outputNumber value="{!v.num3}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.isMul}">
+        multiplication of Two Numbers is :  {!num3}
+        <ui:outputNumber value="{!v.num3}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.isDiv}">
+        Division of Two Numbers is :  {!num3}
+        <ui:outputNumber value="{!v.num3}"/>
+    </aura:if>
+    <br/>
+    <br/>
+    <ui:button press="{!c.addAction}" label="Addition" />
+    <aura:if isTrue="{!v.isRefresh}">
+        <ui:button press="{!c.refreshAction}" label="Refresh" />
+    </aura:if>
+    <ui:button press="{!c.substractionAction}" label="Substraction" />
+    <ui:button press="{!c.multiplicationAction}" label="Multiplication" />
+    <ui:button press="{!c.divisionAction}" label="Division" />
+</aura:component>

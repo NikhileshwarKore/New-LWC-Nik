@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+ <lightning:overlayLibrary aura:id="overlayLib"/>
+    <lightning:button name="modal" label="Show Modal" onclick="{!c.handleShowModal}"/>
+</aura:component>

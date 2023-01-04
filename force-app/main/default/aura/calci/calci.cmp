@@ -1,0 +1,14 @@
+<aura:component >
+    <div>
+        <ui:inputnumber label="First Number : " aura:id= "fnum"/>
+    </div>
+    <div>
+        <ui:inputnumber label="Second Number : " aura:id= "Snum"/>
+         </div>
+    <div>
+    <ui:inputnumber label="Result : " aura:id= "Result"/>
+    </div>
+    <div>
+        <ui:button label="Add"  press="{!c.add}" class="button"/>
+     </div>
+</aura:component>

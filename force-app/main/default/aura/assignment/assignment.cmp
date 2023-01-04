@@ -1,0 +1,355 @@
+<aura:component>
+    <aura:attribute name="count" type="integer" default="0"/>
+    <aura:attribute name="totalCount" type="list" />
+<aura:attribute name="count1" type="integer" default="0"/>
+<aura:attribute name="count2" type="integer" default="0"/>
+<aura:attribute name="count3" type="integer" default="0"/>
+<aura:attribute name="count4" type="integer" default="0"/>
+<aura:attribute name="count5" type="integer" default="0"/>
+<aura:attribute name="count6" type="integer" default="0"/>
+<aura:attribute name="count7" type="integer" default="0"/>
+<aura:attribute name="count8" type="integer" default="0"/>
+<aura:attribute name="count9" type="integer" default="0"/>
+<aura:attribute name="count10" type="integer" default="0"/>
+<aura:attribute name="count11" type="integer" default="0"/>
+<aura:attribute name="count12" type="integer" default="0"/>
+<aura:attribute name="count13" type="integer" default="0"/>
+<aura:attribute name="count14" type="integer" default="0"/>
+<aura:attribute name="count15" type="integer" default="0"/>
+<aura:attribute name="count16" type="integer" default="0"/>
+<aura:attribute name="count17" type="integer" default="0"/>
+<aura:attribute name="count18" type="integer" default="0"/>
+<aura:attribute name="count19" type="integer" default="0"/>
+<aura:attribute name="count20" type="integer" default="0"/>
+<aura:attribute name="count21" type="integer" default="0"/>
+<aura:attribute name="count22" type="integer" default="0"/>
+         <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+
+         
+<div class="slds-grid slds-gutters slds-wrap " style="height: 70px;">
+     <lightning:buttonGroup>
+        <lightning:button label="Refresh"   />
+        <lightning:button label="Edit" />
+        <lightning:button label="Save" />
+    </lightning:buttonGroup>
+    
+    <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.nikhileshwar}"/>
+        </div>
+         <ui:outputtext aura:id="inputname1" value="nikhileshwar"></ui:outputtext>
+           <lightning:input aura:id="input1" value="{!v.count1}" />  <br/>   
+<lightning:button variant="success" label="vote here" title="vote" onclick="{!c.increment1 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{!c.decrement1}"/>
+        </div>
+    </div>
+    
+  <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+            <img src="{!$Resource.Durga}"/>
+        </div>
+       <ui:outputtext aura:id="inputname2" value="Durga "></ui:outputtext>
+           <lightning:input aura:id="input2" value="{!v.count2}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{!c.increment2 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{!c.decrement2 }"/>
+        </div>
+    </div>
+    
+       <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Ranjith}"/>
+            
+        </div>
+      <ui:outputtext aura:id="inputname3" value="Ranjith "></ui:outputtext>
+           <lightning:input aura:id="input3" value="{!v.count3}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment3 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement3 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Sravani}"/>
+            
+        </div>
+           <ui:outputtext aura:id="inputname4" value="Sravani "></ui:outputtext>
+           <lightning:input aura:id="input4" value="{!v.count4}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment4}"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement4 }"/>
+        </div>
+    </div>
+    <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Shwetha}"/>
+            
+        </div>
+       <ui:outputtext aura:id="inputname5" value="Shwetha "></ui:outputtext>
+           <lightning:input aura:id="input5" value="{!v.count5}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment5 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement5}"/>
+        </div>
+    </div>
+<div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Rohan}"/>
+           
+        </div>
+        <ui:outputtext aura:id="inputname6" value="Rohan "></ui:outputtext>
+           <lightning:input aura:id="input6" value="{!v.count6}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment6 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement6 }"/>
+        </div>
+    </div>
+<div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Praneeth}"/>
+           
+        </div>
+        <ui:outputtext aura:id="inputname7" value="Praneeth "></ui:outputtext>
+           <lightning:input aura:id="input7" value="{!v.count7}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment7 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement7 }"/>
+        </div>
+    </div>
+
+    <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Anil}"/>
+        
+        </div>
+        <ui:outputtext aura:id="inputname8" value="Anil "></ui:outputtext>
+           <lightning:input aura:id="input8" value="{!v.count8}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment8 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement8}"/>
+        </div>
+    </div>
+    <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Snehdeep}"/>   
+           
+        </div>
+         <ui:outputtext aura:id="inputname9" value="Snehdeep "></ui:outputtext>
+           <lightning:input aura:id="input9" value="{!v.count9}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment9}"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement9}"/>
+        </div>
+    </div>
+    <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Rajitha}"/>
+           
+        </div>
+         <ui:outputtext aura:id="inputname10" value="Rajitha "></ui:outputtext>
+           <lightning:input aura:id="input10" value="{!v.count10}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment10 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement10 }"/>
+        </div>
+    </div>
+    <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Swati}"/>
+         
+        </div>
+           <ui:outputtext aura:id="inputname11" value="Swati "></ui:outputtext>
+           <lightning:input aura:id="input11" value="{!v.count11}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment11 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement11 }"/>
+        </div>
+    </div> 
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Bhavani}"/>
+            
+        </div>
+      <ui:outputtext aura:id="inputname12" value="Bhavani "></ui:outputtext>
+           <lightning:input aura:id="input12" value="{!v.count12}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment12 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement12 }"/>
+        </div>
+    </div>
+    
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Lavanya}"/>
+            
+        </div>
+  <ui:outputtext aura:id="inputname13" value="Lavanya "></ui:outputtext>
+           <lightning:input aura:id="input13" value="{!v.count13}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment13 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement13 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Pavani}"/>
+            
+        </div>
+       <ui:outputtext aura:id="inputname14" value="Pavani "></ui:outputtext>
+           <lightning:input aura:id="input14" value="{!v.count14}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment14 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement14 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Naresh}"/>
+            
+        </div>
+        <ui:outputtext aura:id="inputname15" value="Naresh "></ui:outputtext>
+           <lightning:input aura:id="input15" value="{!v.count15}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment15 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement15 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Sukanya}"/>
+            
+        </div>
+      <ui:outputtext aura:id="inputname16" value="Sukanya "></ui:outputtext>
+           <lightning:input aura:id="input16" value="{!v.count16}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment16 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement16 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Shikha}"/>
+            
+        </div>
+        <ui:outputtext aura:id="inputname17" value="Shikha "></ui:outputtext>
+           <lightning:input aura:id="input17" value="{!v.count17}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment17 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement17 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Haritha}"/>
+            
+        </div>
+   <ui:outputtext aura:id="inputname18" value="Haritha "></ui:outputtext>
+           <lightning:input aura:id="input18" value="{!v.count18}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment18 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement18 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Swamy}"/>
+            
+        </div>
+       <ui:outputtext aura:id="inputname19" value="Swamy "></ui:outputtext>
+           <lightning:input aura:id="input19" value="{!v.count19}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment19 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement19 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Asifa}"/>
+            
+        </div>
+       <ui:outputtext aura:id="inputname20" value="Asifa "></ui:outputtext>
+           <lightning:input aura:id="input20" value="{!v.count20}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment20 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement20 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Amrutha}"/>
+            
+        </div>
+        <ui:outputtext aura:id="inputname21" value="Amrutha "></ui:outputtext>
+           <lightning:input aura:id="input21" value="{!v.count21}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment21 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement21 }"/>
+        </div>
+    </div>
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Tharun}"/>
+            
+        </div>
+        <ui:outputtext aura:id="inputname22" value="Tharun "></ui:outputtext>
+           <lightning:input aura:id="input22" value="{!v.count22}" />  <br/>
+<lightning:button variant="success" label="vote here" title="vote" onclick="{! c.increment22 }"/>
+ <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement22 }"/>
+        </div>
+    </div>
+    <div class="slds-m-around_xx-large">
+        <lightning:button variant="destructive-text"
+                          label="Submit"
+                          title="Submit"
+                          onclick="{!c.openModel}" />
+        <!--Use aura:if tag to display/hide popup based on isModalOpen value-->  
+        <aura:if isTrue="{!v.isModalOpen}">
+             
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Counting Details</h2>
+                    </header>
+      
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b>Details of Employees</b></p>
+                            <div class="slds-grid slds-wrap slds-text-align_center">
+                                <div class="slds-size_1-of-2 slds-max-small-size_1-of-1"><b>Name</b></div>
+                                <div class="slds-size_1-of-2 slds-max-small-size_1-of-1"><b>Count</b></div>
+                           <br></br>
+                                <aura:iteration items="{!v.totalCount}" var="co" indexVar="key">
+                                <div class="slds-size_1-of-2 slds-max-small-size_1-of-1">{!co.key}</div>
+                                <div class="slds-size_1-of-2 slds-max-small-size_1-of-1">{!co.value}</div>
+                                        </aura:iteration>
+                                                    
+                        
+                        </div>
+
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral"
+                                          label="Cancel"
+                                          title="Cancel"
+                                          onclick="{!c.closeModel}"/>
+                        <lightning:button variant="brand"
+                                          label="OK"
+                                          title="OK"
+                                          onclick="{!c.submitDetails}"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    </div>
+</aura:component>

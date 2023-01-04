@@ -1,0 +1,10 @@
+<aura:component     implements="flexipage:availableForRecordHome,force:hasRecordId">
+ 
+    <aura:attribute name="fields" type="List" 
+                    default="['Name',  'PersonMobilePhone', 'Email']"/>
+    
+        <lightning:recordForm
+            recordId="{!v.recordId}"
+            objectApiName="Account"
+            fields="{!v.fields}" />
+</aura:component>

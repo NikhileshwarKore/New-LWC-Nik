@@ -1,0 +1,13 @@
+<aura:component controller="aura1" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="Contact" type="Contact"/>
+    <aura:attribute name="Cases" type="Case"/>
+    <aura:attribute name="Columns" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <force:recorddata aura:id="contactRecord"
+                      recordId="{!v.recordId}"
+                       layoutType="FULL"/>      
+    <lightning:card iconName="standard:case" title="{!' all cases from all contacts (without params)'}">
+        <lightning:datatable data="{!v.Cases}" columns="{!v.Columns}" keyField="Id" hideCheckboxcolumn="false"/>
+    </lightning:card>
+</aura:component>

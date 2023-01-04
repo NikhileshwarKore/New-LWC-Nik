@@ -1,0 +1,13 @@
+<aura:component >
+	<aura:attribute name="Colors" type="List" />
+    <aura:attribute name="ColorsDefault" type="List"
+                    default="[ 'Red', 'Blue', 'Green','Green' ]"/>
+    	<aura:attribute name="sectionLabels" type="Map" 
+                    default="{ a: 'label1', b: 'label2' }" />
+    <aura:attribute name="collection" type="Set"
+                    default="['red', 'green', 'blue']" />	
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:iteration items="{!v.Colors}" var="item">
+        <p>{!item}</p>
+    </aura:iteration>
+</aura:component>

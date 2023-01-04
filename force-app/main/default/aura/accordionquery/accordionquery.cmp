@@ -1,0 +1,18 @@
+<aura:component controller="accordion" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="caseList" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.handler}"/>
+    <div class="slds-m-around_xx-large">
+        <lightning:accordion>
+            <aura:iteration items="{!v.caseList}" var="case">
+           <lightning:accordionSection  name="{!case.CaseNumber}" label="Case Details 1">
+                    <aura:set attribute="body">
+                        <p>CaseNumber : {!case.CaseNumber}</p>
+                        <p>ContactId : {!case.ContactId}</p>
+                        <p>Priority : {!case.Priority}</p>
+                        <p>Status : {!case.Status}</p>
+                    </aura:set>  
+                </lightning:accordionSection>
+            </aura:iteration>
+        </lightning:accordion>
+    </div>
+</aura:component>

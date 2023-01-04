@@ -1,0 +1,33 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+ <div class="slds-box">
+     <lightning:accordion >
+    <lightning:accordion    activeSectionName = "second"  >
+              <lightning:accordionSection name="first"  label="Accordion (COUNTRIES) ">
+                  <p>INDIA	 </p>
+                   <p>JAPAN  </p>
+                  <p>AUSTRALIA </p> 
+        <lightning:buttonmenu      label = "more countries">
+                   <p>NEWZEALAND </p>
+                   <p>USA </p>
+                  <p>CANADA </p> 
+        </lightning:buttonmenu>
+      </lightning:accordionSection>
+    
+    
+     <lightning:accordionSection name="second"  label="Accordion (Names)">
+         
+                  <p>NIKHIL </p>
+                   <p>ABHI	 </p>
+                  <p>JAY </p> 
+        <lightning:buttonmenu label =  " more names">
+                   <p>KORE </p>
+                   <p>PAVAN </p>
+                  <p>SID </p> 
+             </lightning:buttonmenu>
+      </lightning:accordionSection>
+    
+          </lightning:accordion>
+
+</lightning:accordion>
+             </div>
+</aura:component>

@@ -1,0 +1,13 @@
+<aura:component controller="ContactComponent" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="contactObj" type="Contact" default="{'sobjectType':'Contact',
+                                                               'FirstName':'',
+                                                               'LastName':'',
+                                                               'Email':'',
+                                                               'Phone':''}"/>
+    <aura:attribute name="contactId" type="String"/>
+    <lightning:input value="{!v.contactObj.FirstName}" label="First Name" />
+    <lightning:input value="{!v.contactObj.LastName}" label="Last Name"/>
+    <lightning:input value="{!v.contactObj.Phone}" label="Phone"/>
+    <lightning:input value="{!v.contactObj.Email}" label="Email"/>
+    <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.Savecont}"/>
+</aura:component>

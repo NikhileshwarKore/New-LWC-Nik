@@ -1,6 +1,5 @@
-<aura:component>
-    <aura:attribute name="count" type="integer" default="0"/>
-    <aura:attribute name="totalCount" type="list" />
+<aura:component controller="VotingClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="totalCount" type="list" default="[]"  />
 <aura:attribute name="count1" type="integer" default="0"/>
 <aura:attribute name="count2" type="integer" default="0"/>
 <aura:attribute name="count3" type="integer" default="0"/>
@@ -23,15 +22,10 @@
 <aura:attribute name="count20" type="integer" default="0"/>
 <aura:attribute name="count21" type="integer" default="0"/>
 <aura:attribute name="count22" type="integer" default="0"/>
-         <aura:attribute name="isModalOpen" type="boolean" default="false"/>
-
+  <aura:attribute name="isModalOpen" type="boolean" default="false"/>
          
 <div class="slds-grid slds-gutters slds-wrap " style="height: 70px;">
-     <lightning:buttonGroup>
-        <lightning:button label="Refresh"   />
-        <lightning:button label="Edit" />
-        <lightning:button label="Save" />
-    </lightning:buttonGroup>
+     
     
     <div class="slds-size_1-of-5">
         <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
@@ -299,57 +293,37 @@
  <lightning:button variant="destructive" label="UNDO" title="voter" onclick="{! c.decrement22 }"/>
         </div>
     </div>
-    <div class="slds-m-around_xx-large">
-        <lightning:button variant="destructive-text"
-                          label="Submit"
-                          title="Submit"
-                          onclick="{!c.openModel}" />
-        <!--Use aura:if tag to display/hide popup based on isModalOpen value-->  
-        <aura:if isTrue="{!v.isModalOpen}">
-             
-            <!-- Modal/Popup Box starts here-->
-            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
-                <div class="slds-modal__container">
-                    <!-- Modal/Popup Box Header Starts here-->
-                    <header class="slds-modal__header">
-                        <lightning:buttonIcon iconName="utility:close"
-                                              onclick="{! c.closeModel }"
-                                              alternativeText="close"
-                                              variant="bare-inverse"
-                                              class="slds-modal__close"/>
-                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Counting Details</h2>
-                    </header>
-      
-                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+ <div class="slds-m-around_xx-large"/>
+    <lightning:button variant="brand" label="Submit" title="Submit"  onclick="{!c.openModel}" />
+       
+     <aura:if isTrue="{!v.isModalOpen}">
+            
+     <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+     <div class="slds-modal__container">
+                    
+     <header class="slds-modal__header">
+     <lightning:buttonIcon iconName="utility:close"  onclick="{! c.closeModel }" alternativeText="close" variant="bare-inverse" class="slds-modal__close"/>
+     <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Counting Details</h2>
+     </header>
+     <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
                         <p><b>Details of Employees</b></p>
-                            <div class="slds-grid slds-wrap slds-text-align_center">
-                                <div class="slds-size_1-of-2 slds-max-small-size_1-of-1"><b>Name</b></div>
-                                <div class="slds-size_1-of-2 slds-max-small-size_1-of-1"><b>Count</b></div>
-                           <br></br>
-                                <aura:iteration items="{!v.totalCount}" var="co" indexVar="key">
-                                <div class="slds-size_1-of-2 slds-max-small-size_1-of-1">{!co.key}</div>
-                                <div class="slds-size_1-of-2 slds-max-small-size_1-of-1">{!co.value}</div>
-                                        </aura:iteration>
-                                                    
-                        
+                        <div class="slds-grid slds-wrap slds-text-align_center">
+                        <div class="slds-size_1-of-2 slds-max-small-size_1-of-1"><b>Name</b></div>
+                        <div class="slds-size_1-of-2 slds-max-small-size_1-of-1"><b>Count</b></div>
+                        <br></br>
+                        <aura:iteration items="{!v.totalCount}" var="co" indexVar="key">
+                        <div class="slds-size_1-of-2 slds-max-small-size_1-of-1">{!co.key}</div>
+                        <div class="slds-size_1-of-2 slds-max-small-size_1-of-1">{!co.value}</div>
+                        </aura:iteration>
                         </div>
-
                     </div>
-                    <!--Modal/Popup Box Footer Starts here-->
-                    <footer class="slds-modal__footer">
-                        <lightning:button variant="neutral"
-                                          label="Cancel"
-                                          title="Cancel"
-                                          onclick="{!c.closeModel}"/>
-                        <lightning:button variant="brand"
-                                          label="OK"
-                                          title="OK"
-                                          onclick="{!c.submitDetails}"/>
+                    
+                    <footer class="slds-modal__footer"> <lightning:button variant="neutral"  label="Cancel" title="Cancel" onclick="{!c.closeModel}"/>
+                    <lightning:button variant="brand"  label="OK" title="OK" onclick="{!c.saveRecord}"/>
                     </footer>
-                </div>
-            </section>
-            <div class="slds-backdrop slds-backdrop_open"></div>
-        </aura:if>
-    </div>
-    </div>
+                    </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                    </aura:if>
+                    </div>
 </aura:component>

@@ -1,3 +1,6 @@
-import { LightningElement } from 'lwc';
 
-export default class Hulk extends LightningElement {}
+import {  api,LightningElement } from 'lwc';
+
+export default class Hulk extends LightningElement {
+    @api retrivedUser;
+}

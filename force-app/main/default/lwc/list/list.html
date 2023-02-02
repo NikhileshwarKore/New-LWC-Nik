@@ -1,8 +1,12 @@
 <template>
-    <div class="xyz">
-    list of users 
-    <div class="slds-m-around_medium">
-        {publisherMessage}
-    </div>
-</div>
-</template>
+    <lightning-card title="List of User's">
+      
+    <template if:true={retrivedusers}>
+    <template for:each={retrivedusers} for:item="retrivedusers">
+      <div key={retrivedusers.id}>
+  <c-hulk retrived-user={retrivedusers}></c-hulk>
+      </div>
+   
+    </template>
+    </template></lightning-card>
+  </template>

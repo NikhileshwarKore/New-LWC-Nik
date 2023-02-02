@@ -1,18 +1,18 @@
-import { LightningElement, wire } from 'lwc';
+
+import { LightningElement,wire} from 'lwc';
+import { publish, MessageContext } from 'lightning/messageService';
 import messagechannel from '@salesforce/messageChannel/SearchMessagingChannel__c';
-import {publish, MessageContext} from 'lightning/messageService'
- 
+
 export default class search extends LightningElement {
+
     @wire(MessageContext)
     messageContext;
-    message;
- 
-    handleChange(event){
-        this.message = event.detail.value;
+
+    handleClick(event){
+    let inputvalue=this.template.querySelectorAll("lightning-input")[0].value;
+    const payload = { isTermvalid:true, searchTerm:inputvalue };
+
+        publish(this.messageContext, searchMessage, payload);
     }
- 
-    handleClick() {
-        let message = {message: this.message};
-        publish(this.messageContext, messagechannel, message);
-    }
+    
 }

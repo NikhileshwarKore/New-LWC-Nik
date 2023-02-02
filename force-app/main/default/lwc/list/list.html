@@ -1,12 +1,22 @@
 <template>
-    <lightning-card title="List of User's">
+
+    <lightning-card title="User's">
       
+       <div class="xyz">
+       selected user is  <strong>{selecteduser}</strong>
+        <br/>
+        <lightning-button variant="brand" label="save user" title="Primary action" onclick={handleSaveUserClick} class="slds-m-left_x-small"></lightning-button>
+        <br/>
+    <template if:true={retriveduserName}>
+         The retrived user Name <strong>{retriveduserName}</strong>
+        </template>
     <template if:true={retrivedusers}>
-    <template for:each={retrivedusers} for:item="retrivedusers">
+    <template for:each={retrivedusers} for:item="retrivedusers">   
       <div key={retrivedusers.id}>
-  <c-hulk retrived-user={retrivedusers}></c-hulk>
-      </div>
-   
+  <c-hulk retrived-user={retrivedusers} onuserclicked={handleOnUserClicked}></c-hulk>
+</div>
     </template>
-    </template></lightning-card>
+    </template>
+  </div>
+</lightning-card>
   </template>

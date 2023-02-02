@@ -1,9 +1,9 @@
 .abcd{
     padding:var(--padding-value);
-    background-color: rgb(234, 220, 25);
+    background-color: rgb(82, 195, 2);
 }
 
-.slds-p-horizontal_small{
+.multi-bg-example{
     padding:var(--padding-value);
    background-color: rgb(160, 250, 107);
 }

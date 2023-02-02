@@ -1,4 +1,3 @@
-
 import { api, LightningElement,wire } from 'lwc';
 import {
     subscribe,
@@ -7,13 +6,31 @@ import {
     MessageContext
 } from 'lightning/messageService';
 import searchMessage from '@salesforce/messageChannel/SearchMessagingChannel__c';
+import insertContact from '@salesforce/apex/lwcgit.insertContact';
+import insertContact1 from '@salesforce/apex/lwcgit.insertContact1';
+import { getRecord } from 'lightning/uiRecordApi';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import Account from '@salesforce/schema/Account.Name';
 const QUERY_USER_ENDPOINT_URL='https://api.github.com/search/users?q=';
 
 export default class list extends LightningElement {
 
     @api personName;
-    retrivedusers=[];
+    retrivedusers=[]; 
+    selecteduserArray=[];
+    selecteduser='';
     subscription = null;
+    retriveduserName='';
+
+    @wire(getRecord, { recordId: '0015g000012HCq3AAG', fields: 'Account.Name' })
+    wiredRecord({ error, data }) {
+    if(error){
+     console.log(error) ;
+    }else if(data){
+        console.log(data);
+        this.retriveduserName=data.fields.Name.value;
+    }
+    }
 
     @wire(MessageContext)
     messageContext;
@@ -56,4 +73,32 @@ export default class list extends LightningElement {
         unsubscribe(this.subscription);
         this.subscription = null;
     }
+
+
+    handleOnUserClicked(event) {
+        console.log(event.detail)
+        this.selecteduser=event.detail;
+        this.selecteduserArray.push(event.detail);
+    }
+    get showuser(){
+        return this.selecteduser.length != 0 ? true: false;
+    }
+    async handleSaveUserClick(){
+        console.log('save user in SF');
+
+                try{
+        const issuccess=await insertContact1({accNameList:this.selecteduserArray});
+
+        const evt = new ShowToastEvent({
+            title: 'Records Saved',
+            message: 'Records Saved',
+            variant: 'info',
+        });
+        this.dispatchEvent(evt);
+        
+        console.log('created creation'+issuccess);
+        }catch(error){
+        console.log(error);
+        }
+            }
 }

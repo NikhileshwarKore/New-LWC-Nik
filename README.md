@@ -20,5 +20,4 @@
 Live Demo on the Scratch Org: https://hosted-scratch.herokuapp.com/launch?template=https://github.com/NikhileshwarKore/New-LWC-Nik
 
 # Preview
-![Screenshot_20230111_153817](https://user-images.githubusercontent.com/121805525/211796316-78eaf87e-abcb-419b-bb2c-92020f67f89a.png)
-
+![image](https://user-images.githubusercontent.com/121805525/217144695-8f4fdfaa-f37e-478f-8091-93997ea96af4.png)

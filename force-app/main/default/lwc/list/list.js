@@ -5,8 +5,8 @@ import {
     APPLICATION_SCOPE,
     MessageContext
 } from 'lightning/messageService';
-import searchMessage from '@salesforce/messageChannel/SearchMessagingChannel__c';
-import insertContact from '@salesforce/apex/lwcgit.insertContact';
+import searchMessage from '@salesforce/messageChannel/SearchMessagingChannel__c' ;
+import insertContact from '@salesforce/apex/lwcgit.insertContact' ;
 import insertContact1 from '@salesforce/apex/lwcgit.insertContact1';
 import { getRecord } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
@@ -17,7 +17,7 @@ export default class list extends LightningElement {
 
     @api personName;
     retrivedusers=[]; 
-    selecteduserArray=[];
+    selecteduserArray=[]; 
     selecteduser='';
     subscription = null;
     retriveduserName='';

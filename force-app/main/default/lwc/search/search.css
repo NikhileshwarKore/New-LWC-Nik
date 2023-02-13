@@ -1,5 +1,5 @@
 .abcd{
-    padding:var(--padding-value);
+    padding:var(--padding-value) ;
     background-color: rgb(82, 195, 2);
 }
 

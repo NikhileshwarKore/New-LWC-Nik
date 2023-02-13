@@ -1,5 +1,5 @@
 <template>
-    <template if:true={retrivedUser}>
+    <template if:true={retrivedUser} >
     <div class="slds-var-p-around_medium lgc-bg">
         <lightning-tile label={retrivedUser.login} href={retrivedUser.html_url} type="media">
             <lightning-avatar slot="media" src={retrivedUser.avatar_url} 

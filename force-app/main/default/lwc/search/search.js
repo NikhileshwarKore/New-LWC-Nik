@@ -1,6 +1,6 @@
 import { LightningElement,wire} from 'lwc';
 import { publish, MessageContext } from 'lightning/messageService';
-import searchMessage from '@salesforce/messageChannel/SearchMessagingChannel__c';
+import searchMessage from '@salesforce/messageChannel/SearchMessagingChannel__c' ;
 
 export default class search extends LightningElement {
 

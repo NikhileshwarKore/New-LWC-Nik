@@ -6,7 +6,7 @@ import {
     MessageContext
 } from 'lightning/messageService';
 import searchMessage from '@salesforce/messageChannel/SearchMessagingChannel__c' ;
-import insertContact from '@salesforce/apex/lwcgit.insertContact' ;
+import insertContact from '@salesforce/apex/lwcgit.insertContact';
 import insertContact1 from '@salesforce/apex/lwcgit.insertContact1';
 import { getRecord } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
@@ -16,8 +16,8 @@ const QUERY_USER_ENDPOINT_URL='https://api.github.com/search/users?q=';
 export default class list extends LightningElement {
 
     @api personName;
-    retrivedusers=[]; 
-    selecteduserArray=[]; 
+    retrivedusers=[] ; 
+    selecteduserArray=[];
     selecteduser='';
     subscription = null;
     retriveduserName='';

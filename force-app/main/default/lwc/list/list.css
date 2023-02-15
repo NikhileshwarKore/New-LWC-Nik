@@ -1,4 +1,7 @@
 .xyz{
-    background-color: rgb(110, 243, 255) ;
-    background-image: url("https://w0.peakpx.com/wallpaper/512/260/HD-wallpaper-grooth-thanos-groot.jpg") ;
+   border: var(--border);
+   padding: var(--padding);
+   margin: var(--margin);
+     color: rgb(16, 39, 255);
+     background-image: url("https://w0.peakpx.com/wallpaper/396/17/HD-wallpaper-groot-guardians-of-the-galaxy-train-tracks.jpg")  ;
 }

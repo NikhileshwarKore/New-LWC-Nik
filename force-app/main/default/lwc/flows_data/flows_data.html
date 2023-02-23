@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Closed Cases : ">
+        <template if:true={caseRecord.data}>
+            <ul>
+                <template for:each={caseRecord.data.fields} for:item="field">
+                    <template if:true={field.value} >
+                        <li key={field.fieldApiName}>
+                            {field.fieldApiName}: {field.value}
+                        </li>
+                    </template>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+</template>
+
+

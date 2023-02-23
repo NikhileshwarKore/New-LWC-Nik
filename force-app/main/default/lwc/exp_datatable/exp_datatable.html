@@ -1,0 +1,12 @@
+<template>
+    <lightning-button label="Show Closed Cases" onclick={getClosedCases}></lightning-button>
+
+    <template if:true={hasClosedCases}>
+        <ul>
+            <template for:each={closedCases} for:item="closedCase">
+                <li key={closedCase.Id}>{closedCase.Subject}</li>
+            </template>
+            
+        </ul>
+    </template>
+</template>

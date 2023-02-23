@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Closed Cases">
+        <template if:true={cases}>
+            <template for:each={cases} for:item="myCase">
+    <p key={myCase.Id}>{myCase.Name}</p>
+            </template>
+        </template>
+        <template if:true={error}>
+            {error}
+        </template>
+        <template if:false={cases}>
+            No closed cases found.
+        </template>
+        <lightning-button label="Get Closed Cases" onclick={getClosedCases} class="slds-m-top_medium"></lightning-button>
+    </lightning-card>
+</template>

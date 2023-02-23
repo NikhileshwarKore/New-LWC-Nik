@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Closed Cases">
+        <template if:true={closedCases.data}>
+            <template for:each={closedCases.data} for:item="closedCase">
+                <p key={closedCase.Id}>{closedCase.Subject} - {closedCase.Status}</p>
+            </template>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title={accountRecord.fields.Name.value}>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <p><strong>Account Number:</strong> {accountRecord.fields.AccountNumber.value}</p>
+                <p><strong>Industry:</strong> {accountRecord.fields.Industry.value}</p>
+                <p><strong>Billing City:</strong> {accountRecord.fields.BillingCity.value}</p>
+                <!-- Add more fields as needed -->
+            </div>
+        </div>
+    </lightning-card>
+</template>

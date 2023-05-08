@@ -1,12 +1,12 @@
 <template>
-    <div class="slds-box">
-        <lightning-datatable
-            key-field="Id"
-            data={data}
-            columns={columns}
-            onrowaction={handleRowAction}>
-        </lightning-datatable>
-    </div>
-    
+    <lightning-card title="lightning tree grid demo">
+        <div class="slds-p-around_medium">
+            <lightning-tree-grid
+                hide-checkbox-column
+                columns={gridColumns}
+                data={gridData}
+                key-field="Id">
+            </lightning-tree-grid>
+        </div>
+    </lightning-card>
 </template>
-

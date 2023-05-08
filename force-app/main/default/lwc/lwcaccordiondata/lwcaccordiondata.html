@@ -1,0 +1,22 @@
+<template>
+    <lightning-accordion>
+        <template for:each={accounts} for:item="account">
+            <lightning-accordion-section key={account.Id} label={account.Name} onsectiontoggle={handleAccountSectionClick}>
+                <lightning-accordion>
+                    <template for:each={account.Contacts} for:item="contact">
+                        <lightning-accordion-section key={contact.Id} label={contact.Name} data-contact-section={account.Id}>
+                            <template for:each={caseList} for:item="caseRecord">
+                                <lightning-accordion-section key={caseRecord.Id} name={caseRecord.CaseNumber} label={caseRecord.Subject} >
+                                    <p>CaseNumber: {caseRecord.CaseNumber}</p>
+                                    <p>ContactId: {caseRecord.ContactId}</p>
+                                    <p>Priority: {caseRecord.Priority}</p>
+                                    <p>Status: {caseRecord.Status}</p>
+                                </lightning-accordion-section>
+                            </template>
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>
+            </lightning-accordion-section>              
+        </template>
+    </lightning-accordion>
+</template>

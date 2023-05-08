@@ -1,0 +1,20 @@
+<template>
+ 
+        <lightning-card  title="Tree Grid to Display account>contacts>cases">
+          
+    <p> account>contacts>cases </p>
+    <template if:true={finaldata}>
+        <lightning-tree-grid
+
+        hide-checkbox-column
+
+                columns={fielddefinition}
+                data={finaldata}
+                key-field="Name"
+            ></lightning-tree-grid>
+            
+    </template>
+
+</lightning-card>
+    
+</template>

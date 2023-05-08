@@ -1,0 +1,26 @@
+<template>
+    <p>demo test</p>
+    <template if:true={finaldata}>
+        <lightning-tree-grid
+                columns={fielddefinition}
+                data={finaldata}
+                key-field="Name"
+                onrowselection={handleRowSelection}
+                onrowtoggle={handleRowToggle}
+                onrowselectionchange={handleRowSelectionChange}
+                onrowaction={handleRowAction}
+                onsort={handleSort}
+                onresize={handleResize}
+            >
+            <template for:each={fielddefinition} for:item="col">
+                <lightning-tree-grid-column key={col.fieldName} field-name={col.fieldName} label={col.label}>
+                    <template if:true={col.cellAttributes}>
+                        <template for:each={col.cellAttributes} for:item="attr">
+                            <div key={attr.key} data-attr-key={attr.key} data-attr-value={attr.value}></div>
+                        </template>
+                    </template>
+                </lightning-tree-grid-column>
+            </template>
+        </lightning-tree-grid>
+    </template>
+</template>

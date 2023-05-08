@@ -1,34 +1,56 @@
 import { LightningElement, wire } from 'lwc';
-    import { getListUi } from 'lightning/uiListApi';
-    import CASE_OBJECT from '@salesforce/schema/Case';
+import allAccountsWithContactAndCases from '@salesforce/apex/casesretrieve.allAccountsWithContactAndCases';
 
-    const COLUMNS = [
-        { label: 'Case Number', fieldName: 'CaseNumber', type: 'text' },
-        { label: 'Subject', fieldName: 'Subject', type: 'text' },
-        { label: 'Status', fieldName: 'Status', type: 'text' },
-        { label: 'Closed', fieldName: 'IsClosed', type: 'boolean' }
-    ];
+export default class Lwc_treegrid_cases extends LightningElement {
+    gridData = [];
 
-    export default class Cases_retrieve extends LightningElement {
-        closedCases = [];
-        error;
-
-        @wire(getListUi, { objectApiName: CASE_OBJECT, listViewApiName: 'Closed' })
-        wiredCases({ error, data }) {
-            if (data) {
-                this.closedCases = data.records.records;
-                this.error = undefined;
-            } else if (error) {
-                this.error = error;
-                this.closedCases = undefined;
-            }
-        }
-
-        get columns() {
-            return COLUMNS;
-        }
-
-        handleRowAction(event) {
-            // Handle row actions here
+    @wire(allAccountsWithContactAndCases)
+    wiredAccounts({ data, error }) {
+        if (data) {
+            this.formatGridData(data);
+        } else if (error) {
+            console.error(error);
         }
     }
+
+    gridColumns = [
+        {
+            label: 'Name',
+            fieldName: 'Name',
+            type: 'text'
+        },
+        {
+            label: 'Phone',
+            fieldName: 'Phone',
+            type: 'text'
+        },
+        {
+            label: 'Cases',
+            type: 'text',
+            fieldName: 'Cases',
+            typeAttributes: { iconName: 'utility:case', label: { fieldName: 'caseCount' } }
+        }
+    ];
+
+    formatGridData(result) {
+        this.gridData = result.map((account) => {
+            const { Contacts, ...accountFields } = account;
+            const contactsWithCases = Contacts.map((contact) => {
+                const { Cases, ...contactFields } = contact;
+                return {
+                    ...contactFields,
+                    '_children': Cases.map((caseObj) => ({
+                        ...caseObj,
+                        '_children': []
+                    })),
+                    'caseCount': Cases.length
+                };
+            });
+            return {
+                ...accountFields,
+                '_children': contactsWithCases,
+                'caseCount': ''
+            };
+        });
+    }
+}

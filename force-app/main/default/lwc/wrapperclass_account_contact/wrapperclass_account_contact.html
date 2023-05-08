@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Wrapper Class Demo in LWC" icon-name="custom:custom63">
+        <template if:true={wrapperList.data}>
+            <lightning-tree-grid
+                data={wrapperList.data}
+                columns={columns}
+                key-field="Id"
+                expanded-rows={expandedRows}
+            ></lightning-tree-grid>
+        </template>
+    </lightning-card>
+</template>

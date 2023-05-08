@@ -2,17 +2,15 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
     <isExposed>true</isExposed>
-    
-
     <targets>
         <target>lightning__FlowScreen</target>
-    </targets> 
-
+        <target>lightning__RecordPage</target>
+    </targets>
+    
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
             <propertyType name="T" extends="SObject" label="Select a sObject" description="Select a sObject"/>
             <property name="records" type="{T[]}" label="Records" description="List of Rcords"/>
         </targetConfig>
             </targetConfigs>
-
 </LightningComponentBundle>
